@@ -1,0 +1,34 @@
+{
+  "name": "@gungnir/music",
+  "version": "1.0.0",
+  "description": "A Gungnir addon that adds music support.",
+  "main": "dist/index.js",
+  "dependencies": {
+    "@discordjs/opus": "^0.1.0",
+    "@gungnir/core": "^1.0.3",
+    "@types/node": "^13.9.5",
+    "simple-youtube-api": "^5.2.1",
+    "ytdl-core": "^2.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/discord-gungnir/music.git"
+  },
+  "author": "Dragoteryx",
+  "license": "ISC",
+  "keywords": [
+    "discord",
+    "bot",
+    "discord.js",
+    "framework",
+    "music"
+  ],
+  "bugs": {
+    "url": "https://github.com/discord-gungnir/music/issues"
+  },
+  "homepage": "https://github.com/discord-gungnir/music#readme"
+}
