@@ -1,11 +1,11 @@
 {
   "name": "@gungnir/music",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "A Gungnir addon that adds music support.",
   "main": "dist/index.js",
   "dependencies": {
     "@discordjs/opus": "^0.1.0",
-    "@gungnir/core": "^1.0.3",
+    "@gungnir/core": "^1.0.6",
     "@types/node": "^13.9.5",
     "simple-youtube-api": "^5.2.1",
     "ytdl-core": "^2.0.1"

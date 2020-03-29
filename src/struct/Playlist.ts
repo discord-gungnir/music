@@ -1,6 +1,7 @@
 import type { Guild, StreamDispatcher } from "discord.js";
 import { GungnirClient, GungnirError } from "@gungnir/core";
 import { Playbable } from "./Playable";
+import { StreamOptions } from "discord.js";
 
 const NOT_CONNECTED = "the client needs to be connected to play music.";
 export type PlaylistLooping = "off" | "current" | "playlist";
@@ -27,6 +28,7 @@ export class Playlist {
   public get dispatching() {
     return !!this.#dispatcher && !this.#dispatcher.destroyed;
   }
+  public streamOptions: StreamOptions = {};
 
   // volume
   #volume: number = 1;
@@ -87,7 +89,7 @@ export class Playlist {
       this.#current = (this.#looping == "current" ? this.#current : this.#list.shift()) ?? null;
       if (this.#current) {
         this.#playing = true;
-        this.#dispatcher = this.guild.me?.voice.connection?.play(this.#current.output) as StreamDispatcher;
+        this.#dispatcher = this.guild.me?.voice.connection?.play(this.#current.output, this.streamOptions) as StreamDispatcher;
         this.#dispatcher?.setVolume(this.#volume);
         if (this.#looping != "current")
           this.client.emit("playlistNext", this, this.#current);

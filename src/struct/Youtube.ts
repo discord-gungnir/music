@@ -32,7 +32,6 @@ export namespace Youtube {
 
     public static async fetch(url: string): Promise<Video> {
       const res = await ytdl.getInfo(url);
-      //console.dir(res, {depth: 1});
       return new Video({
         id: res.video_id,
         url: res.video_url,
